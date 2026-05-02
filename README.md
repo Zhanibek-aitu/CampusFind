@@ -1,59 +1,64 @@
-# Week 1 Progress – CampusFind
+# Week 2 Progress – CampusFind
 
 ## ✔ Completed
 
 | Task | Status |
 |------|--------|
-| Project structure created | ✅ |
-| `Item` class implemented | ✅ |
-| `LostFoundManager` class implemented | ✅ |
-| Add item logic | ✅ |
-| List items | ✅ |
-| Update item status | ✅ |
-| Console-based testing (`main.py`) | ✅ |
+| JSON storage | ✅ |
+| StorageManager implementation | ✅ |
+| Data persistence after restart | ✅ |
+| Filtering by type | ✅ |
+| Filtering by category | ✅ |
+| Filtering by location | ✅ |
+| Filtering by status | ✅ |
+| Unique categories using set | ✅ |
+| Unique locations using set | ✅ |
+| Code cleanup and refactoring | ✅ |
 
 ---
 
-## 🟡 Partially Completed
+## What was done
 
-| Task | Status |
-|------|--------|
-| Delete item logic | ⚠️ Implemented but not fully tested |
-| Basic filtering | ⚠️ Implemented but not used in interface |
+During Week 2, we implemented file-based data storage using JSON.  
+The application can now save all lost and found items into a local JSON file and load them again when the program is restarted.
 
----
-
-## ❗ Not Completed Yet
-
-| Task | Status |
-|------|--------|
-| JSON data storage | ❌ |
-| File loading/saving system | ❌ |
-| Advanced filtering (date, location, etc.) | ❌ |
-| Input validation | ❌ |
-| Web interface (Flask) | ❌ |
+We also improved the filtering system and added separate functions for better code organization.
 
 ---
 
-## 🧪 Current State
+## Main improvements
 
-The system works in console mode:
-- Users can add items
+| Area | Description |
+|------|-------------|
+| JSON storage | Items are saved into `items.json` |
+| Data loading | Items are loaded automatically when the program starts |
+| StorageManager | Handles saving and loading data |
+| Filtering | Items can be filtered by type, category, location, and status |
+| Sets | Unique categories and locations are displayed using sets |
+| Refactoring | Console menu logic was separated into functions |
+
+---
+
+## Current State
+
+The project currently works as a console-based application.  
+Users can:
+
+- Add lost or found items
 - View all items
 - Update item status
-
-All data is currently stored in memory (list).
+- Delete items
+- Filter items
+- Save and load data from a JSON file
 
 ---
 
-## 📅 Plan for Week 2
+## Plan for Week 3
 
 | Task | Description |
 |------|-------------|
-| JSON storage | Save and load items using JSON file |
-| StorageManager implementation | Connect file system with manager |
-| Data persistence | Keep data after restarting the program |
-| Improve filtering | Add more filtering options |
-| Code cleanup | Refactor and improve structure |
-
----
+| Flask setup | Create basic Flask application |
+| Routes | Add routes for home page and item actions |
+| HTML templates | Create basic pages for displaying and adding items |
+| Backend connection | Connect Flask routes with existing Python logic |
+| Web dashboard | Start moving from console interface to browser interface |
