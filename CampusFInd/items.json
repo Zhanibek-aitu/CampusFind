@@ -1,0 +1,32 @@
+[
+    {
+        "id": "b79b156e-fb70-4e00-8551-dc3a97db7d98",
+        "name": "Wallet",
+        "item_type": "lost",
+        "category": "Accessories",
+        "location": "Library",
+        "description": "Black wallet",
+        "date": "2026-05-03",
+        "status": "unclaimed"
+    },
+    {
+        "id": "6d972def-80b4-43ad-8be3-96960b2cf0a7",
+        "name": "Phone",
+        "item_type": "found",
+        "category": "Electronics",
+        "location": "Cafeteria",
+        "description": "Samsung phone",
+        "date": "2026-05-03",
+        "status": "unclaimed"
+    },
+    {
+        "id": "2bedfdea-e952-4f89-991b-4644c7db5fc7",
+        "name": "Keys",
+        "item_type": "lost",
+        "category": "Keys",
+        "location": "Library",
+        "description": "Room keys",
+        "date": "2026-05-03",
+        "status": "unclaimed"
+    }
+]
