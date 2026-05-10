@@ -154,4 +154,5 @@ def main():
             print("Invalid option. Try again.")
 
 
-main()
+if __name__ == "__main__":
+    main()

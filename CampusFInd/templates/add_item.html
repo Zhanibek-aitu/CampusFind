@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - CampusFind</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        .container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input[type="text"], select, textarea { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .back-link { display: inline-block; margin-top: 15px; text-decoration: none; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>➕ Add New Item</h2>
+        <form action="/add" method="POST">
+            
+            <div class="form-group">
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" name="name" required placeholder="e.g. MacBook Pro">
+            </div>
+
+            <div class="form-group">
+                <label for="item_type">Type:</label>
+                <select id="item_type" name="item_type">
+                    <option value="lost">Lost (I lost it)</option>
+                    <option value="found">Found (I found it)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category" required placeholder="e.g. Electronics">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required placeholder="e.g. Library">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="3" required placeholder="Color, brand, distinguishing marks..."></textarea>
+            </div>
+
+            <button type="submit">Submit Item</button>
+        </form>
+        <a href="/" class="back-link">← Back to Dashboard</a>
+    </div>
+</body>
+</html>
