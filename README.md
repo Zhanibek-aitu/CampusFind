@@ -55,7 +55,6 @@ Users can currently:
 | `storage.py` | JSON saving and loading |
 | `main.py` | Console version for testing |
 | `items.json` | Stored item data |
-| `requirements.txt` | Required external modules |
 | `templates/index.html` | Main web page |
 | `templates/add_item.html` | Form for adding new items |
 
