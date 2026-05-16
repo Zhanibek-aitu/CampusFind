@@ -6,4 +6,12 @@
     <orderEntry type="jdk" jdkName="Python 3.14" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/CampusFInd/templates" />
+        <option value="$MODULE_DIR$/CampusFInd/static" />
+      </list>
+    </option>
+  </component>
 </module>
