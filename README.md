@@ -1,64 +1,80 @@
-# Week 2 Progress – CampusFind
+# Week 3 Progress – CampusFind
 
 ## ✔ Completed
 
 | Task | Status |
 |------|--------|
-| JSON storage | ✅ |
-| StorageManager implementation | ✅ |
-| Data persistence after restart | ✅ |
-| Filtering by type | ✅ |
-| Filtering by category | ✅ |
-| Filtering by location | ✅ |
-| Filtering by status | ✅ |
-| Unique categories using set | ✅ |
-| Unique locations using set | ✅ |
-| Code cleanup and refactoring | ✅ |
+| Flask setup | ✅ |
+| Basic Flask routes | ✅ |
+| HTML templates created | ✅ |
+| Connection between Flask and backend | ✅ |
+| Display all items in browser | ✅ |
+| Add item through web form | ✅ |
+| Update item status | ✅ |
+| Delete item | ✅ |
+| JSON persistence with Flask | ✅ |
+| Basic web dashboard | ✅ |
 
 ---
 
 ## What was done
 
-During Week 2, we implemented file-based data storage using JSON.  
-The application can now save all lost and found items into a local JSON file and load them again when the program is restarted.
+During Week 3, we converted the console-based application into a simple web-based system using Flask.
 
-We also improved the filtering system and added separate functions for better code organization.
+The project now includes:
 
----
+- A Flask application: `app.py`
+- HTML templates for displaying and adding items
+- Routes for adding, updating, and deleting items
+- Integration between the web interface and the existing Python backend logic
+- Persistent JSON storage connected to the Flask application
 
-## Main improvements
-
-| Area | Description |
-|------|-------------|
-| JSON storage | Items are saved into `items.json` |
-| Data loading | Items are loaded automatically when the program starts |
-| StorageManager | Handles saving and loading data |
-| Filtering | Items can be filtered by type, category, location, and status |
-| Sets | Unique categories and locations are displayed using sets |
-| Refactoring | Console menu logic was separated into functions |
+The application can now be accessed and used directly through a web browser.
 
 ---
 
-## Current State
+## Current Features
 
-The project currently works as a console-based application.  
-Users can:
+Users can currently:
 
-- Add lost or found items
-- View all items
-- Update item status
+- View all lost and found items
+- Add new items through a web form
+- Update item status: claimed / unclaimed
 - Delete items
-- Filter items
-- Save and load data from a JSON file
+- Save and load data automatically using JSON
 
 ---
 
-## Plan for Week 3
+## Current Project Structure
+
+| File / Folder | Purpose |
+|---------------|---------|
+| `app.py` | Flask application and routes |
+| `item.py` | Item class |
+| `manager.py` | Main logic for managing items |
+| `storage.py` | JSON saving and loading |
+| `main.py` | Console version for testing |
+| `items.json` | Stored item data |
+| `templates/index.html` | Main web page |
+| `templates/add_item.html` | Form for adding new items |
+
+---
+
+## Plan for Week 4
 
 | Task | Description |
 |------|-------------|
-| Flask setup | Create basic Flask application |
-| Routes | Add routes for home page and item actions |
-| HTML templates | Create basic pages for displaying and adding items |
-| Backend connection | Connect Flask routes with existing Python logic |
-| Web dashboard | Start moving from console interface to browser interface |
+| Input validation | Prevent empty or invalid form submissions |
+| Custom decorators | Add decorators for logging and validation |
+| UI improvements | Improve layout, colors, spacing, and usability |
+| Additional filtering | Add filtering directly in the web interface |
+| Code cleanup | Refactor repeated logic and improve readability |
+| Testing | Test all main functions and fix bugs |
+
+---
+
+## Notes
+
+The project is now functioning as a basic web application.
+
+Future work will focus on improving user experience, validation, and overall project stability.
