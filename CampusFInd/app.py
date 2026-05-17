@@ -102,6 +102,7 @@ def index():
     lost_count = len([item for item in all_items if item.item_type == "lost"])
     found_count = len([item for item in all_items if item.item_type == "found"])
     claimed_count = len([item for item in all_items if item.status == "claimed"])
+    unclaimed_count = len([item for item in all_items if item.status == "unclaimed"])
 
     return render_template(
         'index.html',
@@ -111,6 +112,7 @@ def index():
         lost_count=lost_count,
         found_count=found_count,
         claimed_count=claimed_count,
+        unclaimed_count=unclaimed_count,
         search_value=search_query,
         item_type_value=item_type,
         category_value=category,

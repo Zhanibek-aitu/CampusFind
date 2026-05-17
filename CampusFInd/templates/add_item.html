@@ -9,15 +9,23 @@
 <body>
 <div class="page-wrapper">
 
-    <header class="header">
-        <div>
-            <h1>Add New Item</h1>
-            <p>Register a lost or found item in the system.</p>
+    <nav class="top-nav">
+        <div class="brand">
+            <div class="brand-icon">➕</div>
+            <div>
+                <h1>Add New Item</h1>
+                <p>Register a lost or found campus item</p>
+            </div>
         </div>
-        <a href="/" class="btn btn-secondary">← Back to Dashboard</a>
-    </header>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="btn btn-light" type="button">🌙 Dark Mode</button>
+            <a href="/" class="btn btn-secondary">← Back</a>
+        </div>
+    </nav>
 
     <main class="form-card">
+
         {% if errors %}
         <div class="error-box">
             <strong>Please fix the following errors:</strong>
@@ -45,38 +53,40 @@
                 <small>Minimum 2 characters.</small>
             </div>
 
-            <div class="form-group">
-                <label for="item_type">Type</label>
-                <select id="item_type" name="item_type" required>
-                    <option value="">Select type</option>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="item_type">Type</label>
+                    <select id="item_type" name="item_type" required>
+                        <option value="">Select type</option>
 
-                    {% if item_type_value == "lost" %}
-                    <option value="lost" selected>Lost (I lost it)</option>
-                    {% else %}
-                    <option value="lost">Lost (I lost it)</option>
-                    {% endif %}
+                        {% if item_type_value == "lost" %}
+                        <option value="lost" selected>Lost (I lost it)</option>
+                        {% else %}
+                        <option value="lost">Lost (I lost it)</option>
+                        {% endif %}
 
-                    {% if item_type_value == "found" %}
-                    <option value="found" selected>Found (I found it)</option>
-                    {% else %}
-                    <option value="found">Found (I found it)</option>
-                    {% endif %}
-                </select>
-            </div>
+                        {% if item_type_value == "found" %}
+                        <option value="found" selected>Found (I found it)</option>
+                        {% else %}
+                        <option value="found">Found (I found it)</option>
+                        {% endif %}
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label for="category">Category</label>
-                <select id="category" name="category" required>
-                    <option value="">Select category</option>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select category</option>
 
-                    {% for category in categories %}
-                    {% if category_value == category %}
-                    <option value="{{ category }}" selected>{{ category }}</option>
-                    {% else %}
-                    <option value="{{ category }}">{{ category }}</option>
-                    {% endif %}
-                    {% endfor %}
-                </select>
+                        {% for category in categories %}
+                        {% if category_value == category %}
+                        <option value="{{ category }}" selected>{{ category }}</option>
+                        {% else %}
+                        <option value="{{ category }}">{{ category }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
 
             <div class="form-group">
@@ -103,7 +113,7 @@
                         minlength="3"
                         placeholder="Color, brand, distinguishing marks..."
                 >{{ description_value }}</textarea>
-                <small>Minimum 3 characters.</small>
+                <small id="descriptionCounter">0 characters</small>
             </div>
 
             <div class="form-actions">
@@ -114,5 +124,7 @@
     </main>
 
 </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

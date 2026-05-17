@@ -28,5 +28,25 @@
         "description": "Room keys",
         "date": "2026-05-03",
         "status": "claimed"
+    },
+    {
+        "id": "1625fa67-0a02-459c-8cf0-aebb27ee840d",
+        "name": "Python Learner Book",
+        "item_type": "lost",
+        "category": "Books",
+        "location": "C1.1.360",
+        "description": "1 volume of big book, have python logo on the cover, around 300 pages long",
+        "date": "2026-05-16",
+        "status": "unclaimed"
+    },
+    {
+        "id": "75c39953-a5c8-4c97-9444-7768c8c1f1e0",
+        "name": "Laptop Charger",
+        "item_type": "lost",
+        "category": "Electronics",
+        "location": "C1.2.268",
+        "description": "Charger for ASUS TUF laptop, lost around 2 days ago, black color.",
+        "date": "2026-05-18",
+        "status": "claimed"
     }
 ]

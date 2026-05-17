@@ -9,13 +9,29 @@
 <body>
 <div class="page-wrapper">
 
-    <header class="header">
-        <div>
-            <h1>CampusFind</h1>
-            <p>Lost & Found management system for campus items</p>
+    <nav class="top-nav">
+        <div class="brand">
+            <div class="brand-icon">📍</div>
+            <div>
+                <h1>CampusFind</h1>
+                <p>Lost & Found Management System</p>
+            </div>
         </div>
-        <a href="/add" class="btn btn-primary">+ Add New Item</a>
-    </header>
+
+        <div class="nav-actions">
+            <button id="themeToggle" class="btn btn-light" type="button">🌙 Dark Mode</button>
+            <a href="/add" class="btn btn-primary">+ Add New Item</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div>
+            <h2>Manage lost and found items in one place</h2>
+            <p>
+                Add, search, filter, update, and track campus items using a simple Flask web interface.
+            </p>
+        </div>
+    </section>
 
     <section class="stats-section">
         <div class="stat-card">
@@ -23,33 +39,40 @@
             <span class="stat-label">Total Items</span>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card lost-stat">
             <span class="stat-number">{{ lost_count }}</span>
             <span class="stat-label">Lost</span>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card found-stat">
             <span class="stat-number">{{ found_count }}</span>
             <span class="stat-label">Found</span>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card claimed-stat">
             <span class="stat-number">{{ claimed_count }}</span>
             <span class="stat-label">Claimed</span>
+        </div>
+
+        <div class="stat-card unclaimed-stat">
+            <span class="stat-number">{{ unclaimed_count }}</span>
+            <span class="stat-label">Unclaimed</span>
         </div>
     </section>
 
     <main class="content-card">
 
         <div class="section-title">
-            <h2>All Items</h2>
-            <p>Search and filter reported lost or found items.</p>
+            <div>
+                <h2>Dashboard</h2>
+                <p>Search and filter all reported items.</p>
+            </div>
         </div>
 
         <form action="/" method="GET" class="filter-form">
 
-            <div class="filter-group">
-                <label for="search">Search</label>
+            <div class="filter-group wide">
+                <label for="search">Server Search</label>
                 <input
                         type="text"
                         id="search"
@@ -134,20 +157,37 @@
             </div>
 
             <div class="filter-actions">
-                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="submit" class="btn btn-primary">Apply</button>
                 <a href="/" class="btn btn-light">Clear</a>
             </div>
 
         </form>
 
+        <div class="quick-search">
+            <label for="liveSearch">Quick Search on Current Results</label>
+            <input
+                    type="text"
+                    id="liveSearch"
+                    placeholder="Filter visible cards instantly..."
+            >
+        </div>
+
         <div class="results-info">
-            <strong>{{ items|length }}</strong> item(s) found
+            Showing <strong id="visibleCount">{{ items|length }}</strong> item(s)
+        </div>
+
+        <div id="noLiveResults" class="empty-state small-empty">
+            <h3>No matching visible items</h3>
+            <p>Try changing the quick search or clearing filters.</p>
         </div>
 
         {% if items %}
         <div class="items-grid">
             {% for item in items %}
-            <div class="item-card card-{{ item.item_type }}">
+            <div
+                    class="item-card card-{{ item.item_type }}"
+                    data-search="{{ item.name }} {{ item.item_type }} {{ item.category }} {{ item.location }} {{ item.description }} {{ item.status }} {{ item.date }}"
+            >
 
                 <div class="item-top">
                     <h3>{{ item.name }}</h3>
@@ -191,14 +231,8 @@
                         <button type="submit" class="btn btn-warning">Update</button>
                     </form>
 
-                    <form action="/delete/{{ item.id }}" method="POST" class="inline-form">
-                        <button
-                                type="submit"
-                                class="btn btn-danger"
-                                onclick="return confirm('Are you sure you want to delete this item?');"
-                        >
-                            Delete
-                        </button>
+                    <form action="/delete/{{ item.id }}" method="POST" class="inline-form delete-form">
+                        <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </div>
 
@@ -216,5 +250,7 @@
     </main>
 
 </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
