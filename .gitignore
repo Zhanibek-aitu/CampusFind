@@ -3,3 +3,6 @@ __pycache__/
 venv/
 .env
 myfin_data.json
+.idea/
+activity_log.txt
+*.log
